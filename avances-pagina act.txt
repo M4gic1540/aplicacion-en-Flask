@@ -1,0 +1,38 @@
+from flask_login import LoginManager, login_user, current_user, login_required, logout_user
+
+@login_manager.user_loader
+def load_user(user_id):
+    return Usuario.query.get(int(user_id))
+
+@login_manager.request_loader
+def load_user_from_request(request):
+    rut = request.form.get('rut')
+    if not rut:
+        return None
+
+    user = Usuario.query.filter_by(rut=rut).first()
+    if user:
+        return user
+
+    return None
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        rut = form.rut.data
+        password = form.password.data
+        user = Usuario.query.filter_by(rut=rut).first()
+        if user and check_password_hash(user.password, password):
+            login_user(user, remember=form.remember_me.data)
+            return redirect(url_for('index'))
+        else:
+            flash('Usuario o contraseña incorrectos.')
+    return render_template('login.html', title='Iniciar sesión', form=form)
+
+
+
+@login_required
+@app.route('/perfil')
+def perfil():
+    return render_template('perfil.html')

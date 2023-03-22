@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    {% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% endblock %}
+</head>
+
+<body>
+    {% block header %}
+    <header>
+        <div class="container">
+            <p class="logo">Magic Store</p>
+            <nav>
+                <a href="{{ url_for('home') }} " href="#">Quienes Somos</a>
+                <a href="#nuestros-programas">Nuestros Programas</a>
+                <a href="#caracteristicas">Características</a>
+            </nav>
+        </div>
+    </header>
+    {% endblock header %}
+
+
+
+    {% block content %}
+
+    {% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/script.js') }}">
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

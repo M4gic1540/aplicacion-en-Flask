@@ -1,0 +1,30 @@
+{% extends 'base-login.html' %}
+
+{% block content %}
+
+<h1>Agregar Usuario</h1>
+<form method="POST">
+    {{ form.csrf_token }}
+    <div class="form-group">
+        {{ form.nombre.label }}
+        {{ form.nombre(class_='form-control') }}
+    </div>
+    <div class="form-group">
+        {{ form.apellido.label }}
+        {{ form.apellido(class_='form-control') }}
+    </div>
+    <div class="form-group">
+        {{ form.rut.label }}
+        {{ form.rut(class_='form-control') }}
+    </div>
+    <div class="form-group">
+        {{ form.email.label }}
+        {{ form.email(class_='form-control') }}
+    </div>
+    <div class="form-group">
+        {{ form.password.label }}
+        {{ form.password(class_='form-control') }}
+    </div>
+    {{ form.submit(class_='btn btn-primary') }}
+</form>
+{% endblock %}

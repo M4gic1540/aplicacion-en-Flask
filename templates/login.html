@@ -1,0 +1,21 @@
+{% extends "base-login.html" %}
+
+{% block content %}
+<div class="login-container">
+    <h2>Iniciar sesión</h2>
+    <form id="login-form" method="POST">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            {{ form.rut.label }}
+            {{ form.rut(id="rut", class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.password.label }}
+            {{ form.password(id="password", class="form-control") }}
+        </div>
+        {{ form.submit(id="login-btn", class="btn btn-primary") }}
+    </form>
+</div>
+
+<script src="../static/Js/script-login.js"></script>
+{% endblock %}

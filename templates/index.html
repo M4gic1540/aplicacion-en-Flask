@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Página de inicio
+{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+{% block content %}
+
+<body>
+    <section id="hero">
+        <h1>Aprende a Programar <br>con los Mejores</h1>
+        <a class="login" href="{{ url_for('login') }}">Iniciar sesión</a>
+    </section>
+
+    <section id="somos-proya">
+        <div class="container">
+            <div class="img-container"></div>
+            <div class="texto">
+
+                <h2>Somos <span class="color-acento">ProgramaYa!</span></h2>
+                <p>Es una empresa de tecnología de la información (TI) que ofrece servicios de
+                    consultoría y desarrollo de software para ayudar a las empresas a resolver sus problemas de negocio
+                    mediante el uso de tecnología.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="nuestros-programas">
+        <div class="container">
+            <h2>Nuestros Programas</h2>
+            <div class="programas">
+                <div class="carta">
+                    <h3>Programador Front-end</h3>
+                    <p>Un programador front-end es un profesional especializado en el desarrollo de la parte visual y de
+                        interacción de una aplicación web, es decir, la parte que los usuarios pueden ver y con la que
+                        pueden interactuar directamente. Este tipo de programador se enfoca principalmente en el diseño,
+                        desarrollo y optimización del aspecto y la funcionalidad del sitio web.</p>
+                        <a class="login" href="{{ url_for('login') }}">+ Info</a>
+                </div>
+                <div class="carta">
+                    <h3>Programador Full-Stack</h3>
+                    <p>Un programador Full Stack es un profesional del desarrollo de software que tiene habilidades y
+                        experiencia en todas las capas de la pila tecnológica utilizada en el desarrollo de aplicaciones
+                        web. Esto incluye tanto el desarrollo de la interfaz de usuario (front-end) como el desarrollo
+                        de la lógica de negocio y la gestión de bases de datos (back-end).</p>
+                        <a class="login" href="{{ url_for('login') }}">+ Info</a>
+                </div>
+                <div class="carta">
+                    <h3>Programador Python</h3>
+                    <p>Un programador en Python es un profesional especializado en el desarrollo de software utilizando
+                        el lenguaje de programación Python. Python es un lenguaje de programación de alto nivel y
+                        multiparadigma, utilizado tanto en el desarrollo de aplicaciones de escritorio como en el
+                        desarrollo de aplicaciones web y móviles.</p>
+                        <a class="login" href="{{ url_for('login') }}">+ Info</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="caracteristicas">
+        <div class="container">
+            <ul>
+                <li>✔️ 100% online</li>
+                <li>✔️ Flexibilidad de horarios</li>
+                <li>✔️ Soporte 1:1</li>
+                <li>✔️ Asistencia financiera</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="final">
+        <h2>Listo para programar?</h2>
+        <button>Iniciar Ahora!</button>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; ProgramaYa 2023</p>
+        </div>
+    </footer>
+</body>
+{% endblock %}
